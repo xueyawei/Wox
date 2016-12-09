@@ -40,6 +40,11 @@ namespace Wox
         {
             var oldActionKeyword = _plugin.Metadata.ActionKeywords[0];
             var newActionKeyword = tbAction.Text.Trim();
+            if (newActionKeyword == "")
+            {
+                MessageBox.Show("Invalid ActionKey");
+                return;
+            }
             if (!PluginManager.ActionKeywordRegistered(newActionKeyword))
             {
                 var id = _plugin.Metadata.ID;
